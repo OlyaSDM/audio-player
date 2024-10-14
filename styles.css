@@ -1,0 +1,531 @@
+:root {
+	--font-1: 'Open Sans', sans-serif;
+	--purple: #761C97;
+	--white: #fff;
+	--white-d: #f0f0f0;
+	--white-g: #dedde3;
+	--gray-blue: #bbbac0;
+	--white-b: #f8f8f8;
+	--gray: #d1cbf1;
+	--gray-p: #b079f8;
+	--pur-light: #B9AEE6;
+}
+
+body,
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--white-d);
+}
+
+img {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 60px;
+	max-width: 100%;
+	height: 350px;
+	display: block;
+}
+
+.container {
+	align-self: center;
+	justify-self: center;
+	width: 800px;
+	height: min-content;
+	border-radius: 48px;
+	background-color: var(--white-d);
+	stroke-width: 4.13px;
+	border: 2px solid var(--white);
+	box-shadow: 0 4px 3px 0 rgba(59, 22, 106, 0.03), 0 9px 7px 0 rgba(59, 22, 106, 0.05), 0 17px 14px 0 rgba(59, 22, 106, 0.06), 0 31px 25px 0 rgba(59, 22, 106, 0.08), 0 58px 46px 0 rgba(59, 22, 106, 0.09), 0 138px 110px 0 rgba(59, 22, 106, 0.13);
+}
+
+.volll {
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
+	margin-top: 20px;
+	margin-left: -40px;
+}
+
+hr {
+	border-radius: 20px;
+	height: 6px;
+	border: none;
+	box-shadow: inset -4px -4px 7px 0 var(--white), 4px 4px 7px 0 rgba(0, 0, 0, 0.05), -4px -4px 7px 0 var(--white), inset 4px 4px 7px 0 rgba(0, 0, 0, 0.05);
+	background: var(--white-g);
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+.hr {
+	border-radius: 20px;
+	height: 6px;
+	border: none;
+	box-shadow: inset -4px -4px 7px 0 var(--white), 4px 4px 7px 0 rgba(0, 0, 0, 0.05), -4px -4px 7px 0 var(--white), inset 4px 4px 7px 0 rgba(0, 0, 0, 0.05);
+	background: var(--white-g);
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+.volume-icon {
+	width: 40px;
+	height: 40px;
+
+}
+
+.volume-area {
+	width: 140px;
+	height: 16px;
+	border-radius: 20px;
+	border-radius: 50px;
+	padding: 3px;
+	box-shadow: inset -4px -4px 7px 0 var(--white), 4px 4px 7px 0 rgba(0, 0, 0, 0.05), -4px -4px 7px 0 var(--white), inset 4px 4px 7px 0 rgba(0, 0, 0, 0.05);
+	background: var(--white-g);
+}
+
+.volume-bar {
+	position: relative;
+	width: 100%;
+	height: inherit;
+	border: inherit;
+	border-radius: inherit;
+	box-shadow: inset 1px 1px 4px 0 rgba(255, 255, 255, 0.4), 0 3px 4px 0 rgba(43, 72, 180, 0.4);
+	background: linear-gradient(328deg, #5d24d6 0%, #7e74ed 100%);
+}
+
+.volume-bar::after {
+	content: '';
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	border-radius: inherit;
+	background-color: var(--white-b);
+	border: 2px solid var(--gray);
+	box-shadow: inset -14px -14px 28px 0 var(--white), 14px 14px 14px 0 rgba(0, 0, 0, 0.05), -14px -14px 21px 0 var(--white), inset 14px 14px 14px 0 rgba(0, 0, 0, 0.05);
+	border-radius: inherit;
+	top: 50%;
+	right: -1px;
+	transform: translateY(-50%);
+}
+
+.start,
+.finish {
+	margin-top: 6px;
+	color: var(--gray-p);
+	font-weight: 600;
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
+	height: min-content;
+}
+
+.song-img {
+	width: 100%;
+	height: 282px;
+	margin: 20px auto;
+	border-radius: 30%;
+
+}
+
+.photo {
+	width: 500px;
+	height: 300px;
+	border-radius: 20px;
+	box-shadow: inset -4px -4px 7px 0 var(--white), 4px 4px 7px 0 rgba(0, 0, 0, 0.05), -4px -4px 7px 0 var(--white), inset 4px 4px 7px 0 rgba(0, 0, 0, 0.05);
+	background: var(--white-g);
+	padding: 6px;
+	transition: all 1s;
+}
+
+.photo.active {
+	animation: shake 0.7s;
+	animation-iteration-count: infinite;
+
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(0.4px, 0.4px) rotate(0deg);
+	}
+
+	10% {
+		transform: translate(-0.6px, -1px) rotate(-0.6deg);
+	}
+
+	90% {
+		transform: translate(0.4px, 0.4px) rotate(0deg);
+	}
+}
+
+.singer-song {
+	margin: 40px auto;
+	width: fit-content;
+	text-align: center;
+}
+
+.singer {
+	color: var(--gray-p);
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.song {
+	font-family: var(--font-1);
+	font-size: 20px;
+	color: var(--pur-light);
+	margin-top: 10px;
+}
+
+.progressArea {
+	margin: 0 auto;
+	width: 80%;
+	height: 8px;
+	padding: 3px;
+	border-radius: 50px;
+	box-shadow: inset -4px -4px 7px 0 var(--white), 4px 4px 7px 0 rgba(0, 0, 0, 0.05), -4px -4px 7px 0 var(--white), inset 4px 4px 7px 0 rgba(0, 0, 0, 0.05);
+	background: var(--white-g);
+	cursor: pointer;
+}
+
+.progress-bar {
+	position: relative;
+	width: 40%;
+	height: inherit;
+	border-radius: inherit;
+	box-shadow: inset 1px 1px 4px 0 rgba(255, 255, 255, 0.4), 0 3px 4px 0 rgba(43, 72, 180, 0.4);
+	background: linear-gradient(328deg, #5d24d6 0%, #7e74ed 100%);
+}
+
+.progress-bar::before {
+	content: '';
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	border-radius: inherit;
+	top: 50%;
+	right: -8px;
+	transform: translateY(-50%);
+	background: inherit;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.progressArea:hover .progress-bar::before {
+	opacity: 1;
+}
+
+.time {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 80%;
+}
+
+.settings {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 50px;
+	align-items: center;
+}
+
+.mixx {
+	cursor: pointer;
+	background-image: url('./assets/icons/mix.png');
+	display: none;
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+
+.wrapper.active {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+}
+
+.left {
+	cursor: pointer;
+	background-image: url('./assets/icons/left.png');
+	background-size: cover;
+	width: 120px;
+	height: 120px;
+
+}
+
+.pause {
+	cursor: pointer;
+	background-image: url('./assets/icons/play.png');
+	background-size: cover;
+	width: 120px;
+	height: 120px;
+
+}
+
+.pause.active {
+	background-image: url('./assets/icons/pause.png');
+}
+
+.right {
+	cursor: pointer;
+	background-image: url('./assets/icons/right.png');
+	background-size: cover;
+	width: 120px;
+	height: 120px;
+
+}
+
+.repeat {
+	cursor: pointer;
+	background-image: url('./assets/icons/repeat.png');
+	display: none;
+	background-size: cover;
+	width: 0px;
+	height: 0px;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	height: 100px;
+	margin-top: 20px;
+}
+
+
+.rs-school {
+	align-self: center;
+	width: 120px;
+	height: 45px;
+}
+
+.year {
+	font-weight: 600;
+	font-size: 40px;
+	margin-left: 200px;
+	margin-right: 200px;
+	align-items: center;
+	color: var(--gray-blue);
+}
+
+.github {
+	width: 50px;
+	height: 50px;
+}
+
+@media(max-width:868px) {
+	.container {
+
+		width: 580px;
+	}
+
+	.singer-song {
+		margin-bottom: 0;
+		height: fit-content;
+	}
+
+	.photo {
+		height: 250px;
+	}
+
+	footer {
+		margin-top: 40px;
+	}
+
+	.rs-school {
+		width: 90px;
+		height: 28px;
+	}
+
+	.github {
+		width: 40px;
+		height: 40px;
+	}
+
+	.foot {
+		margin-top: 10px;
+	}
+
+	.year {
+		font-size: 30px;
+		margin-left: 140px;
+		margin-right: 140px;
+	}
+
+
+	.settings {
+		margin-left: 30px;
+	}
+
+	.pause {
+
+		width: 100px;
+		height: 100px;
+	}
+
+	.right {
+		width: 100px;
+		height: 100px;
+	}
+
+	.left {
+		width: 100px;
+		height: 100px;
+	}
+
+}
+
+@media(max-width:595px) {
+
+	.container {
+		width: 85%;
+	}
+
+	.photo {
+		width: 440px;
+		height: 240px;
+	}
+}
+
+.year {
+	margin-left: 114px;
+	margin-right: 114px;
+}
+
+@media(max-width:550px) {
+	.container {
+		width: 85%;
+	}
+
+	.photo {
+		width: 400px;
+	}
+
+
+}
+
+@media(max-width:520px) {
+	.photo {
+		width: 400px;
+		height: 240px;
+	}
+
+	.year {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+}
+
+@media(max-width:478px) {
+	header {
+		width: 95%;
+	}
+
+	main {
+		width: 95%;
+	}
+
+	.container {
+		width: 350px;
+		height: fit-content;
+	}
+
+	.song-img {
+		margin-bottom: 0;
+		height: fit-content;
+	}
+
+
+	.photo {
+		width: 260px;
+		height: 180px;
+	}
+
+	.pause {
+
+		width: 80px;
+		height: 80px;
+	}
+
+	.right {
+		width: 80px;
+		height: 80px;
+	}
+
+	.left {
+		width: 80px;
+		height: 80px;
+	}
+
+	.github {
+		width: 40px;
+		height: 40px;
+	}
+
+	.year {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+
+	footer {
+		width: 95%;
+	}
+
+}
+
+@media(max-width:420px) {
+	header {
+		width: 85%;
+	}
+
+	main {
+		width: 85%;
+	}
+
+	.container {
+		width: 330px;
+		height: min-content;
+	}
+
+	.song-img {
+		margin-bottom: 0;
+		height: fit-content;
+	}
+
+	.photo {
+		width: 280px;
+		height: 180px;
+	}
+
+	.rs-school{
+		width: 80px;
+		height: 24px;
+	}
+	.year{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+	.github{
+		width: 40px;
+		height: 40px;
+	}
+
+
+}
